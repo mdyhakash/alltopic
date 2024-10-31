@@ -8,3 +8,10 @@ def home(request):
         'topics':topics,
     }
     return render(request, 'home.html', context=context)
+
+def details(request):
+    topics=Topic.objects.all()
+    context={
+        'topics':topics,
+    }
+    return render(request, 'details.html',context=context)

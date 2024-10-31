@@ -20,4 +20,7 @@ from myapp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
+    path('/details', views.details, name='details'),
+    #path('course/<int:course_code>/', views.details, name='details'),
+    
 ]

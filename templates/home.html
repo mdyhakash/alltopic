@@ -14,43 +14,70 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
-  <body class="flex items-center justify-center min-h-screen bg-gray-100">
-    <div class="w-full max-w-4xl p-6 bg-white shadow-lg rounded-lg">
-      <div class="text-center mb-8">
-        <h1 class="text-4xl text-pink-500 font-bold mb-2">All Topics</h1>
-        <h3 class="text-lg font-semibold text-gray-600">
-          Welcome To Our Website
-        </h3>
-      </div>
+  <body class="flex flex-col min-h-screen bg-gray-100">
+    <div class="flex flex-grow items-center justify-center">
+      <div class="w-full max-w-4xl p-6 bg-white shadow-lg rounded-lg">
+        <div class="text-center mb-8">
+          <h1 class="text-4xl text-pink-500 font-bold mb-2">All Topics</h1>
+          <h3 class="text-lg font-semibold text-gray-600">Welcome To 3-1</h3>
+        </div>
 
-      <div class="overflow-x-auto">
-        <table class="w-full border text-left border-gray-200">
-          <thead class="bg-gray-200 text-red-700 text-lg">
-            <tr>
-              <th class="px-4 py-2 border-b">Course Title</th>
-              <th class="px-4 py-2 border-b">Course Code</th>
-              <th class="px-4 py-2 border-b">Course Teacher</th>
-              <th class="px-4 py-2 border-b">Resource Link</th>
-            </tr>
-          </thead>
-          {%for topic in topics%}
-          <tbody class="bg-white hover:bg-pink-50">
-            <td class="px-4 py-2 border-b">{{topic.c_title}}</td>
-            <td class="px-4 py-2 border-b">{{topic.c_code}}</td>
-            <td class="px-4 py-2 border-b">{{topic.c_teacher}}</td>
-            <td class="px-4 py-2 border-b">
-              <a
-                class="p-1 rounded-md hover:bg-blue-600 hover:text-white"
-                href="{{topic.c_link}}"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Click me</a
-              >
-            </td>
-          </tbody>
-          {%endfor%}
-        </table>
+        <div class="overflow-x-auto">
+          <table class="w-full border text-left border-gray-200">
+            <thead class="bg-gray-200 text-red-700 text-lg">
+              <tr>
+                <th class="px-4 py-2 border-b">Course Title</th>
+                <th class="px-4 py-2 border-b">Course Code</th>
+                <th class="px-4 py-2 border-b">Course Teacher</th>
+                <th class="px-4 py-2 border-b">Details...</th>
+              </tr>
+            </thead>
+            {%for topic in topics%}
+            <tbody class="bg-white hover:bg-pink-50">
+              <td class="px-4 py-2 border-b">{{topic.c_title}}</td>
+              <td class="px-4 py-2 border-b">{{topic.c_code}}</td>
+              <td class="px-4 py-2 border-b">{{topic.c_teacher}}</td>
+              <td class="px-4 py-2 border-b">
+                <!-- <a
+                  class="p-1 rounded-md hover:bg-blue-600 hover:text-white"
+                  href="https://{{ topic.c_link }}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Click me</a
+                > -->
+                <a
+                  class="p-1 rounded-md hover:bg-blue-600 hover:text-white"
+                  href="{%url 'details'%}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Click me</a
+                >
+              </td>
+            </tbody>
+            {%endfor%}
+          </table>
+        </div>
       </div>
     </div>
+    <footer class="bg-indigo-600 text-white text-center py-6 mt-auto">
+      <div class="container mx-auto">
+        <p class="text-sm">
+          &copy; 2024. Thanks
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/in/mdyhakash/"
+            class="text-lg font-semibold"
+            >Md Y H Akash
+          </a>
+          &
+          <a
+            target="_blank"
+            href="https://www.facebook.com/AlMamuunn"
+            class="text-lg font-semibold"
+            >Abdullah Al Mamun</a
+          >.
+        </p>
+      </div>
+    </footer>
   </body>
 </html>

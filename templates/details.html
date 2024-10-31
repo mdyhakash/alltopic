@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Details</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="flex items-center justify-center min-h-screen bg-gray-100">
+      <div
+        class="mx-auto p-8 grid gap-6 grid-cols-1 sm:grid-cols-1 lg:grid-cols-4 xl:grid-cols-4"
+      >
+        {%for topic in topics%}
+        <div class="border rounded-md p-4 bg-white">
+          <h2 class="text-2xl font-semibold text-[#920FC2] mb-2">
+            {{ topic.c_title }}
+          </h2>
+          <p class="text-sm text-gray-500">Code: {{ topic.c_code }}</p>
+          <p class="text-sm text-gray-500 mb-2">
+            Instructor: {{ topic.c_teacher }}
+          </p>
+          <hr class="mb-4" />
+
+          <p class="text-gray-600 mb-2">
+            <span class="font-semibold">Mid-Term:</span> {{ topic.s_mid }}
+          </p>
+          <p class="text-gray-600 mb-4">
+            <span class="font-semibold">Final:</span> {{ topic.s_final }}
+          </p>
+
+          <p class="text-gray-600 mb-4">Details : {{ topic.c_description}}</p>
+          <p class="text-gray-600 mb-4">
+            <span class="font-semibold">Resource Link:</span>
+            <a
+              target="_blank"
+              href="https://{{ topic.c_link }}"
+              class="hover:text-red-500 text-green-700 font-semibold p-2 text-lg"
+              >Click here...</a
+            >
+          </p>
+        </div>
+
+        {%endfor%}
+      </div>
+    </div>
+    <footer class="bg-indigo-600 text-white text-center py-6 mt-auto">
+      <div class="container mx-auto">
+        <!-- Copyright Text -->
+        <p class="text-sm">
+          &copy; 2024. Thanks Md Y H Akash & Abdullah Al Mamun.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
