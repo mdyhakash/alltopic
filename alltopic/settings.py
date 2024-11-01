@@ -16,6 +16,7 @@ SECRET_KEY = 'django-insecure-gljpflu@^*kw*5**hj*^_$&vopah@xug60!=4r2#w5#^7)yex=
 DEBUG = True
 
 ALLOWED_HOSTS = ['alltopic.onrender.com']
+#ALLOWED_HOSTS = []
 
 
 # Application definition
