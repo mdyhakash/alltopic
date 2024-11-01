@@ -16,7 +16,7 @@
 
   <body class="flex flex-col min-h-screen bg-gray-100">
     <div class="flex flex-grow items-center justify-center">
-      <div class="w-full max-w-4xl p-6 bg-white shadow-lg rounded-lg">
+      <div class="w-full max-w-6xl p-6 bg-white shadow-lg rounded-lg">
         <div class="text-center mb-8">
           <h1 class="text-4xl text-pink-500 font-bold mb-2">All Topics</h1>
           <h3 class="text-lg font-semibold text-gray-600">Welcome To 3-1</h3>
@@ -38,13 +38,6 @@
               <td class="px-4 py-2 border-b">{{topic.c_code}}</td>
               <td class="px-4 py-2 border-b">{{topic.c_teacher}}</td>
               <td class="px-4 py-2 border-b">
-                <!-- <a
-                  class="p-1 rounded-md hover:bg-blue-600 hover:text-white"
-                  href="https://{{ topic.c_link }}"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Click me</a
-                > -->
                 <a
                   class="p-1 rounded-md hover:bg-blue-600 hover:text-white"
                   href="{%url 'details'%}"
